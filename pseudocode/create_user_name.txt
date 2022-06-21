@@ -1,0 +1,33 @@
+//mã giả php dùng để tạo tên tài khoản cho khách hàng nếu khách hàng đặt bàn mà chưa tạo tài khoản
+
+public function createUser(string $ho, string $ten){
+	$userlist = truy vấn tất cả tên tài khoản của khách hàng trong cơ sở dữ liệu
+	$username = ghép biến $ho và biến $tên
+	$match = true (biến dùng để thực hiện vòng lặp kiểm tra trùng tên tài khoản)
+	
+	while ($match){
+		$check == false; (biến dùng để kiểm tra $username có trùng hay không)
+
+		foreach (từng tên tài khoản trong $userlist){
+			if $username trùng với tên tài khoản trong $userlist {
+				//Xóa đi các chữ số sau đuôi của $username nếu có
+				for (Từ đầu đến cuối của $username) {
+					if ký tự trong $username là số {
+						Xóa ký tự này
+					}
+				}
+				$rannum = randomNumber();
+				$username = chuyển $rannum thành dạng chuỗi rồi gán vào sau $username
+				$check = true;
+				break;
+			}
+		}
+
+		if (!$check) $match = false; //Thoát khỏi vòng lặp nếu không trùng
+	}
+}
+
+public function randomNumber(){
+	count = chọn ngẫu nhiên từ 1 tới 999
+	return count;
+}
